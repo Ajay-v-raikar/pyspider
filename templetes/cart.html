@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+    <h1 class="header">Cart Details</h1>
+    <table  border="1" style="font-size: 15px; border-color: rgb(250, 4, 4); width: 100%; ">
+        <thead class="header1" >
+            <tr>
+                <th></th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        {% for pro in res %}
+        <form action="cart" method="POST">
+            {% csrf_token %}
+            
+            <tbody class="tbody" style="border-color: cyan; border-style: double;">
+                <tr>
+                    <td  width="180" height="150"><img src="{{pro.path}}" alt=""  width="180" height="150"></td>
+                <td>"{{pro.pname}}"</td>
+                <td style="text-align: center; ">₹{{pro.price}}</td>
+                <input type="text" value={{pro.pid}} name="id" hidden>
+                <td>
+                   {{pro.no}} 
+                    </td>
+                <td>₹{{pro.sub}}</td>
+                <td> <button name="remove" class="btn1"> Remove</button> </td>
+                </tr>
+            </tbody>
+        </form>
+        
+        {% endfor %}
+    </table>
+    <br><br><br>
+<h2 style="text-align: right;">Grand Total               :-                    {{bill}}</h2>
+ <br><br>
+    <center><form action="checkout">
+        <button class="btn2" style="width: 25%; float: center;" >Proceed To Checkout</button>
+    </form></center>  
+    {% endblock %}

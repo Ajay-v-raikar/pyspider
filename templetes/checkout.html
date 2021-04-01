@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+    <br><br>
+    <div class="header">
+        <p class="header">Cart Details</p>
+    </div>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    {% for pro in res  %}
+    
+    <table style="width: 100%;">
+        <tr><td width="260" height="250"><img src="{{pro.path}}" alt="aaaa" width="260" height="250"></td>
+          <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td style="width: 50%;"><p style="text-decoration: none; font-size: 25px;">{{pro.pname}}</p> 
+         <b>Price</b> ₹ {{pro.price}} <br> <br>
+         <b>Rating</b> <div class="rating-box">
+          <div class="rating" style="width:{{pro.rate}}%;"></div>
+      </div> <br> <br>
+        <b> Seller Information</b>
+         {% for val in pro.seller %}
+         <ul>    
+             <li>{{val}}</li>
+         </ul>
+       {% endfor %} 
+
+        </td>
+<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Quantity:</b>   {{pro.no}}</td>
+            <td style="text-align: right;">  
+            <b>Price of the Item  ₹ {{pro.sub}}</b></td>
+        </tr>
+    </table>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    {% endfor %}
+    <div class="header">
+        <p class="header">Billing Details</p>
+    </div>
+    
+    <table style="width: 100%;">
+        <tbody>
+          <td rowspan="6"></td>
+          <td rowspan="6" style="width: 60%;"></td>
+            <tr><td style="width: 33%; text-align: right;"><b>Sub Total amount</b> </td>
+            <td style="text-align: right;"> ₹ <b>{{bill}}.00</b></td>
+        </tr>
+            
+            <tr><td style="text-align: right;"><b>State GST(6%)</b></td>
+            <td style="text-align: right;"> ₹ <b>{{state}}</b></td></tr>
+            
+             <tr><td style="text-align: right;"><b>central GST(6%)</b></td>
+             <td style="text-align: right;"> ₹ <b>{{central}}</b></td></tr>
+             <tr><td style="text-align: right;"><b>Delivery Charge</b> </td>
+              <td style="text-align: right;"> ₹ <b>{{dc}}.00</b></td></tr>
+              
+              <tr>
+                <td style="font-size: 20px; text-align: right;"> <b>Grand Total</b></td>
+                <td style="font-size: 20px; text-align: right;"> ₹<b>{{grand}}</td>
+              </tr>
+        </tbody>
+        
+        
+    </table>
+</table>
+    
+    <div class="header">
+        <p class="header">Delivery Details</p>
+       
+    </div>
+    Delivery on {{date}} 
+    
+    <br><br>
+    <form action="main" action="POST">
+      {% csrf_token %}
+      <button  name="checkout" class="btn2" style=" width: 25%;">Place Your Order</button>
+  </form>
+  <br><br><br>
+  {% endblock %}

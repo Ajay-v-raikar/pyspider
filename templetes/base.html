@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+           
+    <style>
+      .header {
+        text-align: left;
+        background: #1abc9c;
+        color: white;
+        font-size: 35px;
+    }
+    .header1 {
+        padding: 60px;
+        text-align: center;
+        background: #5a3bb1;
+        color: white;
+        font-size: 25px;
+    }
+    .tbody {
+        padding: 60px;
+        text-align: center;
+        color: rgb(8, 8, 8);
+        font-size: 20px;
+    }
+        .btn {
+            font-family: sans-serif;
+            font-size: xx-large;
+            float: left;
+            color: rgb(250, 4, 4);
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+}   
+        .btn1 {
+            font-family: sans-serif;
+            font-size: xx-large;
+            float: left;
+            color: rgb(12, 35, 241);
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+}
+.btn2 {
+  font-family: sans-serif;
+  font-size: xx-large;
+  float: center;
+  color: rgb(12, 35, 241);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;}
+
+        .btn:hover {
+            background-color: rgb(240, 16, 16);
+            color: white;
+}
+        .btn1:hover {
+            background-color: rgb(62, 12, 241);
+            color: white;
+}
+.btn2:hover {
+  background-color: rgb(62, 12, 241);
+  color: white;
+}
+.container {
+  position: relative;
+  width: 1200%;
+  max-width: 1000px;
+}
+
+.container img {
+  width: 1800%;
+  height: 50%;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: rgb(250, 4, 4);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: rgb(17, 1, 1);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+.container .btn:hover {
+  background-color: black;
+  color: white;
+}
+.sbtn {
+
+  width: 5%;
+  left: 70%;
+  background-color: #f1f1f1;
+  color: rgb(250, 4, 4);
+  font-size: 10px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+.search {
+  
+  
+  width: 50%;
+
+  background-color:white;
+  color: rgb(17, 1, 1);
+  font-size: 16px;
+  padding: 16px 30px;
+  border-color: rgb(19, 19, 1);
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+.sbtn:hover {
+  background-color: black;
+  color: white;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 50%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.fa-stack[data-count]:after {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  content: attr(data-count);
+  font-size: 40%;
+  padding: 0.6em;
+  border-radius: 999px;
+  line-height: 0.75em;
+  color: white;
+  color: #3b00df;
+  text-align: center;
+  min-width: 2em;
+  font-weight: bold;
+  background: white;
+  border-style: solid;
+}
+.fa-circle {
+  color: #3b00df;
+}
+.red-cart {
+  color: #3b00df;
+  background: white;
+}
+
+.dropdown { width: 100%;     /* customize Select tag(DropDown options) with id="alphalist" */
+             display: inline-block;
+             background-color: #F5F5F5;
+             border-radius: 10px;
+             outline: none;
+             transition: all .5s ease;
+             position: relative;
+             vertical-align: center;
+             font-size: 15px;
+             color: black;
+             height: 30px;
+           } 
+
+ input { border: 0;
+         background-color: #F5F5F5;
+         border-radius: 10px;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         -ms-appearance: none;
+         -o-appearance: none;
+         appearance: none;
+         text-align: left;
+         width: 100%;
+         height: 32px;        
+       }
+       #resizingSelectTag {
+        width: 50px;
+       } 
+        
+       #selectTagWidth{
+        display : none;
+       } 
+       .button1 {
+        border: solid;
+        background-image: url("{% static 'images/ser.png' %}");
+        background-size: 100%;
+    }
+    .submit-btn{
+      display: block;
+      border: none;
+      outline: none;
+      background: #ff652f;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .rating-box {
+    position:relative;
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: FontAwesome;
+    display:inline-block;
+    color: #F68127;
+  }
+  .rating-box:before{
+      content: "\f006 \f006 \f006 \f006 \f006";
+    }
+  .rating-box .rating {
+      position: absolute;
+      left:0;
+      top:0;
+      white-space:nowrap;
+      overflow:hidden;
+      color: #F68127;
+    }
+    .rating-box .rating:before {
+        content: "\f005 \f005 \f005 \f005 \f005";
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function increment() {
+         document.getElementById('demoInput').stepUp();
+      }
+      function decrement() {
+         document.getElementById('demoInput').stepDown();
+      }
+   </script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+<script>
+  $(document).ready(function() {
+    $('#resizingSelectTag').change(function(){
+       $("#widthTempOption").html($('#resizingSelectTag option:selected').text());
+       $(this).width($("#selectTagWidth").width());  
+    });
+   });
+</script>
+{% if massage %}
+    <script>alert("{{ massage }}")</script>
+  {% endif %}
+</head>
+<body>
+ 
+    
+    <form class="example" action="cart" method="POST">
+      {% csrf_token %} 
+      <input type="text" value={{name}} name="name" hidden >
+      <table style="width: 100%;">
+        <tr>
+          <td><div class="search_bar">
+            <a href="{% url 'main' %}"><img src=" {% static 'images/ShippingKart image.JPG' %} " alt="" ></a></td>
+          <td><select id="resizingSelectTag" name="cat"  style=" height:50px; ">
+            <option value="all" style="font-size: 25px;" >All</option>
+            <option value="home" style="font-size: 25px;"  value="home">Home Appliances</option>
+            <option value="electric" style="font-size: 25px;" value="electric">Mobile phone and Accessories</option>
+            <option value="fash" style="font-size: 25px;" value="fash">Fashion and Apparels</option>
+            <option value="book" style="font-size: 25px;" value="book">Books</option>
+          </select>
+          <select id="selectTagWidth">
+
+          <option id="widthTempOption"></option>
+     
+        </select></td>
+          <td style="width: 70%;"> 
+            <input type="text" placeholder="Search.." name="sele" required>
+            <button type="submit" name="search"><i class="fa fa-search" style="width:30px; height:30px;" ></i></button> 
+          
+          </td>
+            <td style="width: 10%;">Hi, {{name}} <br>
+              <a href="{% url 'login' %} " ><h3><b>Signout</b></h3></a>
+            
+          <td>  <a href="{% url 'cart' %} " >
+          <span class="fa-stack fa-2x has-badge" data-count="{{count}}">
+           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+           <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
+         </span></a></td>
+        </tr>
+      </table>  
+    </form>
+    <br><br>
+
+    {% block content %}
+      
+    
+    {% endblock  %}
+  
+        <br><br> <br><br><br><br><br><br>
+    <table style=" width:100%; background-color: rgb(19,25,33); color:white">
+      <tr>
+        <td style="width: 85%;">
+          <ul>
+            <h2><b>Address</b></h2>
+            <li style="font-size:20px;">#23, 2nd floor, 2nd cross</li>
+            <li style="font-size:20px;">Balaji nagar, uttarahalli main road</li>
+            <li style="font-size:20px;">Bangalore-560061</li>
+          </ul>
+        </td>
+      
+        <td>
+          <h2><b> &nbsp; &nbsp; &nbsp; Links</b></h2>
+          <ul>
+            <li><a href="{% url 'main' %}" style="color: white; font-size:20px;">Home</a></li>
+            <li><a href="{% url 'cart' %}" style="color: white ; font-size:20px;">Cart</a></li>
+            <li><a href="{% url 'cart' %}" style="color: white; font-size:20px;">Product Search</a></li>
+            <br>
+              <a href="#" class="fa fa-facebook" style="color: white;"></a>
+              <a href="#" class="fa fa-twitter" style="color: white;"></a>
+              <a href="#" class="fa fa-google" style="color: white;"></a>
+              <a href="#" class="fa fa-linkedin" style="color: white;"></a>
+              <a href="#" class="fa fa-youtube" style="color: white;"></a>
+              <a href="#" class="fa fa-instagram" style="color: white;"></a>
+          </ul>
+        </td>
+      </tr>
+    
+          <tr><td colspan="2"><center>Copyright 2021 ,Ajay V. All Rights Reserved.  </center></td></tr>
+      
+    </table>
+</body>
+</html> 

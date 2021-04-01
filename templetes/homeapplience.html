@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+
+  </form>
+  <br><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    {% for pro in res  %}
+    <form action="product" method="POST">
+        {% csrf_token %}
+        <table  style="width: 100%;" >
+            <tr>
+                <td rowspan="4" style="width: 2%; "><a href="{% url 'product' var1=pro.pid %}" class="product"><img src="{{pro.path}}" alt="aaaa" width="180" height="150"></a></td>
+                <td rowspan="4"> </td>
+                <td colspan="2" style="width:80%"><a href="{% url 'product' var1=pro.pid %}" class="product" style="text-decoration: none; font-size: 25px;">{{pro.pname}}</a></td>
+                <input type="text" name="val" value="{{pro.pid}}" hidden>
+                
+            </tr>
+            <tr>
+                <td colspan="2"><b>Price :</b> {{pro.price}} </td>
+            </tr>
+            <tr>
+                <td rowspan="2"><b>Rating</b> <div class="rating-box">
+              <div class="rating" style="width:{{pro.rate}}%;"></div>
+          </div></td>
+            </tr>
+            <tr><td>Delivery Charge - 50 Rs 
+      
+              </td></tr>
+        </table>
+    </form>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    {% endfor %}
+    <br><br>
+    {% endblock %} 

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+{% if message %}
+    <script>alert("{{ message }}")</script>
+    {% endif %}
+    <br><br>
+    <div class="container">
+        <img src=" {% static 'images/search.png' %} " alt="Snow" style="width:150%">
+      </div>
+      <br><br>
+      <form action="homeapplience" method="POST">
+        {% csrf_token %}
+        <button class="btn1" style="width: 25%;" name="home">Home Appliances</button>
+      <button class="btn1" style="width: 25%;" name="electric">Mobile phone and Accessories</button>
+      <button class="btn1" style="width: 25%;" name="fash"name="book">Fashion and Apparels</button>
+      <button class="btn1" style="width: 25%;" name="book" >Books</button></form>
+
+
+  {% endblock %}
